@@ -1,0 +1,5 @@
+.chips_categoria{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px 0 10px;
+}

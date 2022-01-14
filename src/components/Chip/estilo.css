@@ -1,0 +1,9 @@
+.div_main{
+  margin-top: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+
+img{
+  cursor: pointer;
+}

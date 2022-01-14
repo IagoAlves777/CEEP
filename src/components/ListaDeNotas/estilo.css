@@ -14,3 +14,7 @@
   max-height: 400px;
   display: inline;
 }
+
+.lista-notas_div{
+  min-width:65%;
+}
