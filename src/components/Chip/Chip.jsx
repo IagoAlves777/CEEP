@@ -17,6 +17,7 @@ export default function Chip({title, deletarCategoria, index}) {
       </Badge>
       {""}
       <img
+        alt="qualquer coisa"
         src={deletar} 
         onClick={categoriaDelete}
         >

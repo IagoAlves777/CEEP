@@ -1,42 +1,36 @@
 import React from "react";
 import { useState } from "react";
-import { Dropdown } from 'react-bootstrap/'
+import { Dropdown, Form } from "react-bootstrap/";
 import "./estilo.css";
-function FormularioCadastro({ criarNota, categorias}) {
+function FormularioCadastro({ criarNota, categorias }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-
+  const [categoria, setCategoria] = useState("");
   function _criarNota(e) {
     e.preventDefault();
     e.stopPropagation();
-    criarNota(title, text);
+    criarNota(title, text,categoria);
     setText("");
     setTitle("");
   }
 
   return (
     <>
-      <form className="form-cadastro " onSubmit={_criarNota}>
-        <Dropdown>
-          <Dropdown.Toggle
-            variant="secondary"
-            id="dropdown-basic-button"
-            style={{ backgroundColor: "#373f51" }}
-          >
-            Categoria
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-          {console.log(categorias)}
+      <Form className="form-cadastro " onSubmit={_criarNota}>
+        <Form.Select aria-label="Default select example"
+          onChange={(e) => {
+            setCategoria(e.target.value);
+          }}
+        >
+          <option>Categoria</option>
           {categorias.map((item, index) => {
           return (
-            <Dropdown.Item href="#/action-1">{item.categoria}</Dropdown.Item>
+           <option>{item.categoria}</option>
           );
         })}
-          </Dropdown.Menu>
-        </Dropdown>
+        </Form.Select>
 
-        <input
+        <Form.Control
           value={title}
           type="text"
           placeholder="Título"
@@ -45,7 +39,8 @@ function FormularioCadastro({ criarNota, categorias}) {
             setTitle(e.target.value);
           }}
         />
-        <textarea
+        <Form.Control
+          as="textarea"
           value={text}
           rows={15}
           placeholder="Escreva sua nota..."
@@ -57,7 +52,7 @@ function FormularioCadastro({ criarNota, categorias}) {
         <button className="form-cadastro_input form-cadastro_submit">
           Criar Nota
         </button>
-      </form>
+      </Form>
     </>
   );
 }

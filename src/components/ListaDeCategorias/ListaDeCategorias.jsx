@@ -9,7 +9,6 @@ export default function ListaDeCategorias({ listaCategorias, deletarCategoria })
       {listaCategorias.map((item, index) => {
         return <Chip title={item.categoria} deletarCategoria={deletarCategoria} index={index}/>;
       })}
-      {console.log(listaCategorias)}
     </div>
   );
 }

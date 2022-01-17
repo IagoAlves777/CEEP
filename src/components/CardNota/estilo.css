@@ -3,10 +3,8 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--fundo-detalhes);
   border-radius: 4px;
   flex-wrap: wrap;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   padding: 16px;
 }
 .card-nota_cabecalho {
@@ -14,6 +12,7 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .card-nota_texto {
@@ -28,4 +27,10 @@
 
 .card-nota_img{
   cursor: pointer;
+}
+
+.header-nota{
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
 }
